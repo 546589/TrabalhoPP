@@ -14,8 +14,13 @@
 #include <string.h>
 #include <ctype.h>
 
+// --CONSTANTES--
 const int MD = 1; // Selecionador de modo PLAY(0) / CORR(1)
 
+const int O = 6; //Quantidade de linhas e colunas
+
+//--PROTÓTIPOS--
+void InOceano (char matriz [O][O]);
 
 void
 aleatorio(int A, int B,int naves[6][6])
@@ -140,24 +145,8 @@ int main()
         {
             // --MONSTRANDO O OCEANO NA TELA--
 
-            for (i = 0; i < 6; i++)
-            {
-                printf("\n");
-
-                for(j = 0; j < 6; j++)
-                {
-                    if (i == 0)
-                    {
-                        printf(" %c  ", matriz[i][j]);
-                    }
-                    else
-                    {
-                        printf(" %c |", matriz[i][j]);
-                    }
-                }
-
-            printf("\n   +---+---+---+---+---+");
-            }
+            InOceano (matriz);
+  
 
             printf("\n");
             printf("\n Destroyers:  0\n");
@@ -207,7 +196,7 @@ int main()
                     break;
 
                 default:
-                    printf(" invalid");
+                    printf(" invalid\n");
                     break;
             }
 
@@ -234,25 +223,8 @@ int main()
 
     else if(MD == 1)
     {
-        for (i = 0; i < 6; i++)
-        {
-            printf("\n");
-
-            for(j = 0; j < 6; j++)
-            {
-                if (i == 0)
-                {
-                    printf(" %c  ", naves[i][j]);
-                }
-                else
-                {
-                    printf(" %c |", naves[i][j]);
-                }
-            }
-
-            printf("\n   +---+---+---+---+---+ ");
-        }
-
+        InOceano (matriz);
+            
         printf("\n");
         printf("\n Destroyers:  0\n");
         printf(" Submarines:  3\n");
@@ -260,3 +232,32 @@ int main()
     }
 return 0;
 }
+
+void
+InOceano (char matriz [O][O])
+{
+   int i;
+   int j;
+
+   for (i = 0; i < 6; i++)
+   {
+      printf("\n");
+
+      for(j = 0; j < 6; j++)
+      {
+        if (i == 0)
+          {
+             printf(" %c  ", matriz[i][j]);
+          }
+        else
+          {
+             printf(" %c |", matriz[i][j]);
+          }
+      }
+
+        printf("\n   +---+---+---+---+---+");
+    }
+
+
+}
+
