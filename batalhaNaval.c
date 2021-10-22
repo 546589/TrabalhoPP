@@ -19,6 +19,8 @@ const int MD = 1; // Selecionador de modo PLAY(0) / CORR(1)
 
 const int O = 6; //Quantidade de linhas e colunas
 
+const int Q_ARGS = 3;
+
 //--PROTÓTIPOS--
 void InOceano (char matriz [O][O]);
 
@@ -259,5 +261,26 @@ InOceano (char matriz [O][O])
     }
 
 
+}
+
+int
+argsOk (int argc, char *argv[])
+
+{
+    if (argc < Q_ARGS)
+		return 3;
+	
+	if (  ( strcmp (argv[1], "-t") == 0 ) 	
+        ;		
+		
+	else if (    (( strcmp (argv[1], "-t") == 0)
+		     
+			return 5;
+			
+	else if  (   (( strcmp (argv[1], "-t") == 0)
+		  
+			return 5;
+
+    return 0;
 }
 
